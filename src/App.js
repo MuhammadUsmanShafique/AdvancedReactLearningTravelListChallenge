@@ -41,6 +41,10 @@ export default function App() {
       )
     );
   }
+  function ClearItemsArray() {
+    const confimed = window.confirm("Click Ok if you are sure to clear list"); // as conform method returns 'true' in case of pressing OK
+    if (confimed) setItems([]);
+  }
 
   return (
     <div className="app">
@@ -50,6 +54,7 @@ export default function App() {
         items={items}
         onDeleteItem={handleDeleteItem}
         onTogglePacked={handleTogglePacked}
+        onClearItems={ClearItemsArray}
       />
       <Stats items={items} />
     </div>
